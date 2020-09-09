@@ -33,9 +33,6 @@ public class Matcher implements Callable<Map<String, Word>> {
 				Word word = new Word(searchWord);
 				while (index != -1) {
 					LineValue lv = lineInfo.get(new LineKey(index));
-					if (lv == null) {
-						System.out.println("aa");
-					}
 					word.addLocation(new TextLocation(lv.getLineNumber(), index - lv.getLineStartIndex()));
 					index = text.indexOf(searchWord, index + searchWord.length());
 				}

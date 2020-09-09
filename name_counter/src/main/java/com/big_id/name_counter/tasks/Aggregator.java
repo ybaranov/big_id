@@ -20,8 +20,6 @@ public class Aggregator {
 				}
 			});
 		});
-		for (String name : result.keySet().stream().sorted().collect(Collectors.toList())) {
-			System.out.println(result.get(name));
-		}
+		result.keySet().stream().sorted().forEach(name -> System.out.println(result.get(name)));
 	}
 }
